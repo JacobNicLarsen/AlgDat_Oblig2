@@ -3,6 +3,6 @@ package no.oslomet.cs.algdat;
 public class Main {
 
     public static void main(String[] args) {
-	    DobbeltLenketListe dobbeltLenketListe = new DobbeltLenketListe();
+        System.out.println("Hei Oblig 2");
     }
 }
