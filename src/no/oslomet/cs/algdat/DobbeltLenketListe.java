@@ -51,7 +51,28 @@ public class DobbeltLenketListe<T> implements Liste<T>
     // konstruktør
     public DobbeltLenketListe(T[] a)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        this();  // alle variabelene er nullet
+
+        // Finner den første i a som ikke er null
+        int i = 0; for (; i < a.length && a[i] == null; i++);
+
+        if (i < a.length)
+        {
+            Node<T> p = hode = hale = new Node<>(a[i], null,null);  // den første noden
+            antall = 1;                                 // vi har minst en node
+
+            for (i++; i < a.length; i++)
+            {
+                if (a[i] != null)
+                {
+                    p = p.neste =  new Node<>(a[i],p.forrige, null);   // en ny node
+                    antall++;
+                }
+            }
+            hale = p;
+        }
+
+
     }
 
     // subliste
@@ -63,19 +84,24 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public int antall()
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        return antall;
     }
 
     @Override
     public boolean tom()
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        return antall == 0;
     }
 
     @Override
     public boolean leggInn(T verdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        Objects.requireNonNull(verdi);
+
+        if(tom()) hode = hale = new Node<>(verdi, null, null);
+        else hale = hale.neste = new Node<>(verdi,hale.forrige, null);
+        antall ++;
+        return true;
     }
 
     @Override
@@ -129,12 +155,54 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public String toString()
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        StringBuilder s = new StringBuilder();
+
+        s.append('[');
+
+        if(!tom()){
+            Node<T> p = hode;
+            s.append(p.verdi);
+
+            p = p.neste;
+
+
+
+            while (p!=null){
+                s.append(',').append(' ').append(p.verdi);
+                p = p.neste;
+            }
+        }
+        s.append(']');
+
+
+        return s.toString();
+
     }
 
     public String omvendtString()
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        StringBuilder s = new StringBuilder();
+
+        s.append('[');
+
+        if(!tom()){
+            Node<T> p = hale;
+            s.append(p.verdi);
+
+            System.out.println(p.verdi);
+            p = p.forrige;
+
+
+            while (p!=null){
+                s.append(',').append(' ').append(p.verdi);
+                p = p.forrige;
+            }
+        }
+        s.append(']');
+
+
+        return s.toString();
+
     }
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
