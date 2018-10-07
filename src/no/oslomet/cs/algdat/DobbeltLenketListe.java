@@ -1,10 +1,6 @@
 package no.oslomet.cs.algdat;
 
-import java.util.Comparator;
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import java.util.*;
 
 public class DobbeltLenketListe<T> implements Liste<T>
 {
@@ -37,7 +33,18 @@ public class DobbeltLenketListe<T> implements Liste<T>
     // hjelpemetode
     private Node<T> finnNode(int indeks)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        Node<T> p;
+        if(indeks < antall/2){
+            p = hode;
+            for(int i = 0; i < indeks; i++) p = p.neste;
+
+        }
+        else{
+             p = hale;
+            for (int i = antall - 1; i > indeks ; i--) p = p.forrige;
+        }
+
+        return p;
     }
 
     // konstruktør
@@ -65,9 +72,11 @@ public class DobbeltLenketListe<T> implements Liste<T>
             {
                 if (a[i] != null)
                 {
-                    p = p.neste =  new Node<>(a[i],p.forrige, null);   // en ny node
+                    p = p.neste  =  new Node<>(a[i],p, null);   // en ny node
+
                     antall++;
                 }
+                //System.out.println("Legger til node " + a[i] + " Neste node er: "  + " forrige node er: " + p.forrige.verdi);
             }
             hale = p;
         }
@@ -78,8 +87,28 @@ public class DobbeltLenketListe<T> implements Liste<T>
     // subliste
     public Liste<T> subliste(int fra, int til)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        fratilKontroll(antall,fra,til);
+        Node<T> p = finnNode(fra);
+        List l = new LinkedList();
+
+
     }
+
+    private void fratilKontroll(int tablengde, int fra, int til)
+    {
+        if (fra < 0)                                  // fra er negativ
+            throw new IndexOutOfBoundsException
+                    ("fra(" + fra + ") er negativ!");
+
+        if (til > tablengde)                          // til er utenfor tabellen
+            throw new IndexOutOfBoundsException
+                    ("til(" + til + ") > tablengde(" + tablengde + ")");
+
+        if (fra > til)                                // fra er større enn til
+            throw new IllegalArgumentException
+                    ("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
+    }
+
 
     @Override
     public int antall()
@@ -99,7 +128,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
         Objects.requireNonNull(verdi);
 
         if(tom()) hode = hale = new Node<>(verdi, null, null);
-        else hale = hale.neste = new Node<>(verdi,hale.forrige, null);
+        else hale = hale.neste = new Node<>(verdi,hale, null);
         antall ++;
         return true;
     }
@@ -119,7 +148,10 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public T hent(int indeks)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        indeksKontroll(indeks,false);
+
+        return  finnNode(indeks).verdi;
+
     }
 
     @Override
@@ -131,7 +163,16 @@ public class DobbeltLenketListe<T> implements Liste<T>
     @Override
     public T oppdater(int indeks, T nyverdi)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        indeksKontroll(indeks,false);
+        Objects.requireNonNull(nyverdi);
+
+        Node<T> p = finnNode(indeks);
+        T gammelverdi = p.verdi;
+
+        p.verdi = nyverdi;
+
+        endringer++;
+        return gammelverdi;
     }
 
     @Override
@@ -189,7 +230,6 @@ public class DobbeltLenketListe<T> implements Liste<T>
             Node<T> p = hale;
             s.append(p.verdi);
 
-            System.out.println(p.verdi);
             p = p.forrige;
 
 
