@@ -412,6 +412,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
             denne = finnNode(indeks);
             fjernOK = false;
             iteratorendringer = endringer;
+
         }
 
         @Override
@@ -440,7 +441,39 @@ public class DobbeltLenketListe<T> implements Liste<T>
         @Override
         public void remove()
         {
-            throw new UnsupportedOperationException("Ikke laget ennå!");
+            if(iteratorendringer != endringer)
+                throw new ConcurrentModificationException("Listen er endret");
+
+            if(!fjernOK)
+                throw new IllegalStateException("Ikke ok å fjerne");
+
+            fjernOK = false;
+            if(antall == 1)hode = hale = null;
+
+            else if(denne == null){
+                hale = hale.forrige;
+                hale.neste = null;
+            }
+
+            else if(denne.forrige == hode){
+                hode = hode.neste;
+                hode.forrige = null;
+            }
+            else{
+
+                Node<T> p = denne;
+                Node<T> q = denne.forrige.forrige;
+
+                p.forrige = q;
+                q.neste = p;
+
+        }
+
+
+            antall--;
+            endringer++;
+            iteratorendringer++;
+
         }
 
     } // DobbeltLenketListeIterator
