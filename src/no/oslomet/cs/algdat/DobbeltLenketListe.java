@@ -379,7 +379,9 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
     {
-        throw new UnsupportedOperationException("Ikke laget ennå!");
+        for (Iterator<T> i = liste.iterator(); i.hasNext();) {
+
+        }
     }
 
     @Override
