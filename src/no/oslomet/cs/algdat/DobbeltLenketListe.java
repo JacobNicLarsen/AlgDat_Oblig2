@@ -76,7 +76,6 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
                     antall++;
                 }
-                //System.out.println("Legger til node " + a[i] + " Neste node er: "  + " forrige node er: " + p.forrige.verdi);
             }
             hale = p;
         }
@@ -181,7 +180,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
     {
         indeksKontroll(indeks,false);
 
-        return  finnNode(indeks).verdi;
+        return finnNode(indeks).verdi;
 
     }
 
@@ -279,7 +278,7 @@ public class DobbeltLenketListe<T> implements Liste<T>
                 antall --;
                 return temp;
             }
-            //System.out.println("Hei hei");
+
             hode = hode.neste;
             hode.forrige = null;
         }
@@ -377,10 +376,36 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
     }
 
+    public static <T> void bytt(Liste<T> liste, Node<T> a, Node<T> b){
+        Node<T> p = a;
+        Node<T> q = b;
+
+        Node<T> temp = p;
+        p.verdi = q.verdi;
+        p.neste = q.neste;
+        p.forrige = q.forrige;
+
+        q.verdi = temp.verdi;
+        q.neste = temp.neste;
+        q.forrige = temp.forrige;
+
+    }
+
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
     {
-        for (Iterator<T> i = liste.iterator(); i.hasNext();) {
+        for (int i = 0; i < liste.antall(); i++) {
+            T verdi = liste.iterator().next();
+            int min = i;
 
+            for(Iterator<T> j = liste.iterator(); j.hasNext();){
+                if(c.compare(verdi, j.next()) < 0){
+                    min = i;
+                    verdi = j.next();
+                }
+                j.next();
+            }
+
+            liste.leggInn(liste.fjern(i));
         }
     }
 
