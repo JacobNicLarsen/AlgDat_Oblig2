@@ -2,6 +2,7 @@ package no.oslomet.cs.algdat;
 
 import java.util.*;
 
+//Jacob Larsen s326186
 public class DobbeltLenketListe<T> implements Liste<T>
 {
     private static final class Node<T>   // en indre nodeklasse
