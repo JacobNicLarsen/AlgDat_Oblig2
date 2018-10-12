@@ -393,19 +393,17 @@ public class DobbeltLenketListe<T> implements Liste<T>
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c)
     {
-        for (int i = 0; i < liste.antall(); i++) {
-            T verdi = liste.iterator().next();
-            int min = i;
-
-            for(Iterator<T> j = liste.iterator(); j.hasNext();){
-                if(c.compare(verdi, j.next()) < 0){
-                    min = i;
-                    verdi = j.next();
+        for (int n = liste.antall(); n > 0; n--){
+            Iterator<T> iterator = liste.iterator();    //Oppretter ny iterator hver iterasjon
+            int m = 0;                                  //Setter m(indeks til midlertidig minsteverdi) til 0
+            T minverdi = iterator.next();               //Setter midlertidig minsteverdi til første verdi i lenken.
+            for (int i = 1; i < n; i++){                //Itterer gjennom lenken frem til n
+                T verdi = iterator.next();              //Stter verdi lik neste verdi i lenken
+                if (c.compare(verdi,minverdi) < 0){     //Sammenligner minsteverdi med verdi for å se om verdi er mindre
+                    m = i; minverdi = verdi;            //Dersom verdi er mindre blir minsteverdi oppdatert
                 }
-                j.next();
             }
-
-            liste.leggInn(liste.fjern(i));
+            liste.leggInn(liste.fjern(m));  //Fjerner minste verdien fra lista og legger den til bakerst.
         }
     }
 
