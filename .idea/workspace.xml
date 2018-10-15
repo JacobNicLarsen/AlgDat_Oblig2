@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="17701d62-dcc5-4d43-84cc-9bd67370aa03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/DobbeltLenketListe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/no/oslomet/cs/algdat/DobbeltLenketListe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgDat_Oblig2/no/oslomet/cs/algdat/DobbeltLenketListe$DobbeltLenketListeIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgDat_Oblig2/no/oslomet/cs/algdat/DobbeltLenketListe$DobbeltLenketListeIterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgDat_Oblig2/no/oslomet/cs/algdat/DobbeltLenketListe$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgDat_Oblig2/no/oslomet/cs/algdat/DobbeltLenketListe$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgDat_Oblig2/no/oslomet/cs/algdat/DobbeltLenketListe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgDat_Oblig2/no/oslomet/cs/algdat/DobbeltLenketListe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgDat_Oblig2/no/oslomet/cs/algdat/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgDat_Oblig2/no/oslomet/cs/algdat/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AlgDat_Oblig2/no/oslomet/cs/algdat/Oblig2Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AlgDat_Oblig2/no/oslomet/cs/algdat/Oblig2Test.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,22 +50,24 @@
     <session id="627915252">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10693" />
+          <entry key="java" value="10721" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10693" />
+          <entry key="JAVA" value="10721" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -90,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/no/oslomet/cs/algdat/DobbeltLenketListe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="399" column="53" selection-start-line="399" selection-start-column="53" selection-end-line="399" selection-end-column="53" />
+            <state relative-caret-position="434">
+              <caret line="403" column="21" selection-start-line="403" selection-start-column="21" selection-end-line="403" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -99,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/no/oslomet/cs/algdat/Oblig2Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+            <state relative-caret-position="408">
+              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,7 +126,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/no/oslomet/cs/algdat/Beholder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="323">
               <caret line="20" column="54" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -169,6 +175,7 @@
       <find>hent</find>
       <find>finnNode</find>
       <find>oppdater</find>
+      <find>sort</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -179,8 +186,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Beholder.java" />
         <option value="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Liste.java" />
-        <option value="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Oblig2Test.java" />
         <option value="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Main.java" />
+        <option value="$PROJECT_DIR$/src/no/oslomet/cs/algdat/Oblig2Test.java" />
         <option value="$PROJECT_DIR$/src/no/oslomet/cs/algdat/DobbeltLenketListe.java" />
       </list>
     </option>
@@ -202,7 +209,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -225,14 +231,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539121254784" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539355737864" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -250,7 +257,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Oblig2Test">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="no.oslomet.cs.algdat.Main" />
       <module name="AlgDat_Oblig2" />
@@ -280,8 +287,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Oblig2Test" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Oblig2Test" />
       </list>
     </recent_temporary>
   </component>
@@ -305,17 +312,20 @@
       <workItem from="1539120234405" duration="785000" />
       <workItem from="1539181030192" duration="4916000" />
       <workItem from="1539258435243" duration="2793000" />
+      <workItem from="1539355012312" duration="841000" />
+      <workItem from="1539435433690" duration="685000" />
+      <workItem from="1539614908593" duration="29000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55566000" />
+    <option name="totallyTimeSpent" value="57121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18603411" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18763326" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -361,8 +371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/oslomet/cs/algdat/Oblig2Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+        <state relative-caret-position="408">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -378,7 +388,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/oslomet/cs/algdat/Beholder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="323">
           <caret line="20" column="54" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -388,8 +398,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/no/oslomet/cs/algdat/DobbeltLenketListe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="399" column="53" selection-start-line="399" selection-start-column="53" selection-end-line="399" selection-end-column="53" />
+        <state relative-caret-position="434">
+          <caret line="403" column="21" selection-start-line="403" selection-start-column="21" selection-end-line="403" selection-end-column="21" />
         </state>
       </provider>
     </entry>
